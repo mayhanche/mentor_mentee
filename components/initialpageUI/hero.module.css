@@ -1,17 +1,19 @@
-.nav{ 
-    padding: 10px 15px; 
+.maindiv{ 
+    padding: 50px 20px; 
     display: flex; 
     justify-content: space-between;
+    align-items: center;
 }
-.logo{
-    font-size: 32px; 
-    font-weight: 700;
+.right{ 
+    width: 50%; 
+    text-align: center;   
 }
-.navbuttons{ 
-    display:flex;
-    gap: 15px;
+.title{
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
-.login, .getstarted{
+.getstarted{ 
     color:  #F0F3FA;
     background-color: #00246B;
     border: 1px solid #00246B; 
@@ -20,4 +22,3 @@
     padding: 10px 20px; 
     cursor: pointer;
 }
-

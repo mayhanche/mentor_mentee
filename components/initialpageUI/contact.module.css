@@ -1,0 +1,42 @@
+.textdiv{ 
+    text-align: center;
+    margin-bottom: 30px;
+}
+.text{ 
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+.subtext{ 
+    font-size: large;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.maildiv{ 
+    display: flex;
+    justify-content: center;
+    padding:20px;
+    gap:50px;
+}
+.email{
+    width:30%;
+    height:50px;
+    border: 2px solid #00246B;
+    border-radius: 10px;
+    padding-left:20px;
+    color: #00246B;
+    font-size: medium;
+    font-weight:600;
+}
+.email::placeholder{
+    color:#00246B;
+}
+.getstarted{
+    color:  #F0F3FA;
+    background-color: #00246B;
+    border: 1px solid #00246B; 
+    border-radius: 10px;
+    font-size: 16px; 
+    padding: 10px 20px; 
+    cursor: pointer;
+}
