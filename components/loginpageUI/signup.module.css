@@ -7,10 +7,11 @@
     justify-content: center; 
     align-items: center; 
 }
-/* 
+/*
 .nav{
     padding: 10px 15px; 
     display: flex; 
+    justify-content: start;
 }
 .logo{
     color: #F0F3FA;
@@ -22,7 +23,7 @@
     background-color: #F0F3FA;
     border-radius: 20px;
     width: 60%; 
-    height: 500px; 
+    height: 600px; 
     margin: auto;
     padding: 20px;
     display: flex;
@@ -60,7 +61,7 @@
     font-size: 16px;
     font-weight: 600;
 }
-.login{
+.signup{
     color:  #F0F3FA;
     background-color: black;
     border: 1px solid black; 
@@ -74,8 +75,7 @@
     margin-left: auto;   
 }
 .links{
-    padding: 30px 50px;
+    padding: 30px; 
     font-weight: 500;
-    display: flex; 
-    justify-content: space-between;
+    text-align: center;
 }

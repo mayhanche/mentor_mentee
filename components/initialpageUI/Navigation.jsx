@@ -4,10 +4,10 @@ import style from './nav.module.css'
 const navigation = () => {
   return (
     <div className={style.nav}>
-      <h1 className={style.logo}>Logo</h1>
+      <img src="../../assets/images/main_logo.png" alt="Main Logo" width="100px"/>
       <div className={style.navbuttons}>
-      <button className={style.login}>Log In</button>
-      <button className={style.getstarted}>Get Started</button>
+        <button className={style.login}>Log In</button>
+        <button className={style.getstarted}>Get Started</button>
       </div>
     </div>
   );

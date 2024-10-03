@@ -4,19 +4,25 @@
     justify-content: space-between;
     align-items: center;
 }
-.right{ 
+.leftdiv{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.rightdiv{ 
     width: 50%; 
     text-align: center;   
 }
-.title{
-    font-size: 34px;
+.maintitle{
+    font-size: 40px;
     font-weight: 800;
+    line-height: 50px;
     margin-bottom: 20px;
 }
 .getstarted{ 
     color:  #F0F3FA;
-    background-color: #00246B;
-    border: 1px solid #00246B; 
+    background-color: black;
+    border: 1px solid black; 
     border-radius: 10px;
     font-size: 16px; 
     padding: 10px 20px; 

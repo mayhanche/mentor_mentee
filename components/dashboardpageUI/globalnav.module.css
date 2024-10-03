@@ -1,17 +1,18 @@
 .nav{ 
     padding: 10px 15px; 
-    display: flex; 
-    justify-content: space-between;
+    display: flex;
+    align-items: center;
 }
-.logo{
-    font-size: 32px; 
-    font-weight: 700;
+.logodiv{
+    width: 80%;
 }
-.navbuttons{ 
-    display:flex;
-    gap: 15px;
+.notidiv{
+    width: 5%;
 }
-.login, .getstarted{
+.btndiv{
+    width: 15%;
+}
+.browse{
     color:  #F0F3FA;
     background-color: black;
     border: 1px solid black; 
