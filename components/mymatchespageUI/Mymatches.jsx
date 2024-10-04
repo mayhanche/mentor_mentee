@@ -1,22 +1,12 @@
 import React from 'react'
 import style from '@/components/mymatchespageUI/mymatches.module.css'
+import SideNavBar from '../navbar/sideNavBar'
 
 const Mymatches = () => {
   return (
     <div class={style.maindiv}>
         {/* Side Nav bar */}
-        <div class={style.sidenav}>
-            <ul class={style.items}>
-                <li>Dashboard</li>
-                <li>Explore</li> 
-                <li>My Matches</li>
-                <li>Message</li>
-                <li>About</li>
-            </ul>
-            <div className={style.profilediv}>
-                <img src="../../assets/icons/profile.svg" alt="Profile icon" width="50px" />
-            </div>
-        </div>
+        <SideNavBar/>
 
         {/* My Matches Page */}
         <div class={style.contentdiv}>
@@ -38,32 +28,35 @@ const Mymatches = () => {
             </div>
 
             {/* My Matches */}
-            <h1 className={style.title}>My Matches</h1>
-            <div class={style.matches}>
-                {/* Mentor 1 */}
-                <div className={style.mentor}>
-                    <img src="../../assets/images/profile.svg" alt="profile picture" className={style.image}></img>
-                    <h2 className={style.name}>David Johnson</h2>
-                    <p className={style.jobtitle}>Web Frontend Developer</p>
-                    <p className={style.experience}>3 years</p>
-                    <button className={style.button}>View Profile</button>
+            <div className='mb-[96px]' >
+                <h1 className={style.title}>My Matches</h1>
+                <div class={style.matches}>
+                    {/* Mentor 1 */}
+                    <div className={style.mentor}>
+                        <img src="../../assets/images/profile.svg" alt="profile picture" className={style.image}></img>
+                        <h2 className={style.name}>David Johnson</h2>
+                        <p className={style.jobtitle}>Web Frontend Developer</p>
+                        <p className={style.experience}>3 years</p>
+                        <button className={style.button}>View Profile</button>
+                    </div>
+                    {/* Mentor 2 */}
+                    <div className={style.mentor}>
+                        <img src="../../assets/images/profile.svg" alt="profile picture" className={style.image}></img>
+                        <h2 className={style.name}>Ryan Paul Kim</h2>
+                        <p className={style.jobtitle}>Operation Manager</p>
+                        <p className={style.experience}>8 years</p>
+                        <button className={style.button}>View Profile</button>
+                    </div>
+                    {/* Mentor 3 */}
+                    <div className={style.mentor}>
+                        <img src="../../assets/images/profile.svg" alt="profile picture" className={style.image}></img>
+                        <h2 className={style.name}>Hazel Ley</h2>
+                        <p className={style.jobtitle}>Data Analyst</p>
+                        <p className={style.experience}>4 years</p>
+                        <button className={style.button}>View Profile</button>
+                    </div>
                 </div>
-                {/* Mentor 2 */}
-                <div className={style.mentor}>
-                    <img src="../../assets/images/profile.svg" alt="profile picture" className={style.image}></img>
-                    <h2 className={style.name}>Ryan Paul Kim</h2>
-                    <p className={style.jobtitle}>Operation Manager</p>
-                    <p className={style.experience}>8 years</p>
-                    <button className={style.button}>View Profile</button>
-                </div>
-                {/* Mentor 3 */}
-                <div className={style.mentor}>
-                    <img src="../../assets/images/profile.svg" alt="profile picture" className={style.image}></img>
-                    <h2 className={style.name}>Hazel Ley</h2>
-                    <p className={style.jobtitle}>Data Analyst</p>
-                    <p className={style.experience}>4 years</p>
-                    <button className={style.button}>View Profile</button>
-                </div>
+
             </div>
 
         </div>

@@ -1,7 +1,10 @@
+'use client'
 import React from 'react'
 import style from '@/components/loginpageUI/login.module.css'
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
+  const router = useRouter()
   return (
     <div className={style.wholediv}>
       {/*
@@ -23,8 +26,8 @@ const Login = () => {
               <input type="password" id="psw" className={style.input}/><br/>
               <input type="checkbox" id="showpsw"/>
               <label for="showpsw" className={style.showpsw}>Show password</label><br/>
-              <button className={style.login}>Log In</button>
             </form>
+              <button onClick={() => router.push('/dashboard')}  className={style.login}>Log In</button>
             <div className={style.links}>
               <a href="#">Forgot password ?</a>
               <a href="#">Don't have an account ? <br/>Sign Up</a>

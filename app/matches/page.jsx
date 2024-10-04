@@ -1,11 +1,11 @@
 import GlobalNav from '@/components/dashboardpageUI/Globalnav'
-import UserProfile from '@/components/userprofilepageUI/Userprofile'
+import Mymatches from '@/components/mymatchespageUI/Mymatches'
 
 const page = () => {
     return (
-      <div>
+      <div className='h-screen overflow-y-hidden ' >
           <GlobalNav/>
-          <UserProfile/>
+          <Mymatches/>
       </div>
     )
   }

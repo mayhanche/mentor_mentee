@@ -2,6 +2,7 @@
     display: flex;
     top: 60px; 
     left: 0px;
+    /* flex-direction: column; */
 }
 /* Side Nav bar */
 .sidenav{ 
@@ -16,7 +17,7 @@
     box-shadow: 24px 2px 21px -21px rgba(0,0,0,0.1);
 }
 .contentdiv{
-    width: 85%; 
+    width: 100%; 
     padding: 20px;
     height: 100vh;
 }

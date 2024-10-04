@@ -1,22 +1,12 @@
 import React from 'react'
 import style from '@/components/aboutpageUI/about.module.css'
-
+import Footer from '@/components/initialpageUI/Footer'
+import SideNavBar from '../navbar/sideNavBar'
 const About = () => {
   return (
     <div className={style.maindiv}>
         {/* Side Nav bar */}
-        <div className={style.sidenav}>
-            <ul className={style.items}>
-                <li>Dashboard</li>
-                <li>Explore</li> 
-                <li>My Matches</li>
-                <li>Message</li>
-                <li>About</li>
-            </ul>
-            <div className={style.profilediv}>
-              <img src="../../assets/icons/profile.svg" alt="Profile icon" width="50px"/>
-            </div>
-        </div>
+        <SideNavBar/>
 
         {/* About Page */}
         <div className={style.contentdiv}>
@@ -31,7 +21,10 @@ const About = () => {
               <p className={style.text2}>" Guiding your journey <br/>with the perfect mentor match " </p>
             </div>
           </div>
+
+          <Footer/>
         </div>
+
       </div>
     
   )

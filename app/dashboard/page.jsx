@@ -3,7 +3,7 @@ import Dashboard from '@/components/dashboardpageUI/Dashboard'
 
 const page = () => {
   return (
-    <div>
+    <div className='h-screen overflow-y-hidden'>
         <GlobalNav/>
         <Dashboard/>
     </div>

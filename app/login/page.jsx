@@ -1,11 +1,11 @@
 import Login from "@/components/loginpageUI/Login"
-import Signup from "@/components/loginpageUI/Signup"
+// import Signup from "@/components/loginpageUI/Signup"
 
 const page = () => {
     return (
       <div>
         <Login/>
-        <Signup/>
+        {/* <Signup/> */}
       </div>
     )
 }

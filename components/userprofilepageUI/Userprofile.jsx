@@ -1,22 +1,11 @@
 import React from 'react'
 import style from '@/components/userprofilepageUI/userprofile.module.css'
-
+import SideNavBar from '../navbar/sideNavBar'
 const Userprofile = () => {
   return (
     <div class={style.maindiv}>
         {/* Side Nav bar */}
-        <div class={style.sidenav}>
-            <ul class={style.items}>
-                <li>Dashboard</li>
-                <li>Explore</li> 
-                <li>My Matches</li>
-                <li>Message</li>
-                <li>About</li>
-            </ul>
-            <div className={style.profilediv}>
-                <img src="../../assets/icons/profile.svg" alt="Profile icon" width="50px" />
-            </div>
-        </div>
+        <SideNavBar/>
 
         {/* User Profile Page */}
         <div class={style.contentdiv}>

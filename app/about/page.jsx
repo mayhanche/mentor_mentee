@@ -1,13 +1,12 @@
 import GlobalNav from '@/components/dashboardpageUI/Globalnav'
 import About from '@/components/aboutpageUI/About'
-import Footer from '@/components/initialpageUI/Footer'
 
 const page = () => {
   return (
-    <div>
+    <div className='h-screen overflow-y-hidden ' >
         <GlobalNav/>
         <About/>
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }

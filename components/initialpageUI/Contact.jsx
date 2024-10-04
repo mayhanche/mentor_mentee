@@ -1,6 +1,13 @@
+"use client"
 import React from 'react'
 import style from '@/components/initialpageUI/contact.module.css'
+
+import { useRouter } from 'next/navigation'
+
+
 const Contact = () => {
+  const router = useRouter()
+
   return (
     <div>
         <div className={style.maindiv}>
@@ -10,7 +17,7 @@ const Contact = () => {
         </div>
         <div className={style.maildiv}>
           <input className={style.email} type="email" placeholder="Email"/>
-          <button className={style.getstarted}>Join Now</button>
+          <button onClick={()=> router.push('/login/signup')}  className={style.getstarted}>Join Now</button>
         </div>
     </div>
   )
