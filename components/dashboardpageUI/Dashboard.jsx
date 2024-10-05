@@ -4,13 +4,11 @@ import style from '@/components/dashboardpageUI/dashboard.module.css'
 
 import SideNavBar from '../navbar/sideNavBar'
 
-
 const Sidenav = () => {
   return (
     <div className={style.maindiv}>
       {/* Side Nav bar */}
       <SideNavBar/>
-      
 
       {/* Dashboard Page */}
       <div className={style.contentdiv} >

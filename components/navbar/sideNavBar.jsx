@@ -10,7 +10,9 @@ const sideNavBar = () => {
           <li>
             <Link href="/dashboard">Dashboard</Link>
           </li>
-          <li>Explore</li> 
+          <li>
+            <Link href="/explore">Explore</Link>
+          </li> 
           <li>
             <Link href="/matches">My Matches</Link>
           </li>

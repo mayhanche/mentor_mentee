@@ -1,0 +1,33 @@
+.maindiv{
+    display: flex; 
+}
+.leftdiv, .rightdiv{
+    width: 50%; 
+}
+.formdiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+
+.labels{ 
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.input, .dropdown{ 
+    width: 80%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #00246B;
+    border-radius: 5px;
+}
+
+
+
+

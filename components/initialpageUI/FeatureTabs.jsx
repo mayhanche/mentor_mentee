@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Tabs } from "@/components/ui/Tabs";
+import style from '@/components/initialpageUI/featuretabs.module.css'
 
 export default function TabsDemo() {
   const tabs = [
@@ -9,7 +10,7 @@ export default function TabsDemo() {
       title: "Dashboard",
       value: "Dashboard",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className={style.tabcontent}>
           <p>Dashboard</p>
           <DummyContent />
         </div>
@@ -19,7 +20,7 @@ export default function TabsDemo() {
       title: "Explore",
       value: "Explore",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className={style.tabcontent}>
           <p>Explore</p>
           <DummyContent />
         </div>
@@ -29,7 +30,7 @@ export default function TabsDemo() {
       title: "Matches",
       value: "My Matches",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className={style.tabcontent}>
           <p>My Matches</p>
           <DummyContent />
         </div>
@@ -39,7 +40,7 @@ export default function TabsDemo() {
       title: "Messages",
       value: "Messages",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className={style.tabcontent}>
           <p>Messages</p>
           <DummyContent />
         </div>
@@ -49,7 +50,7 @@ export default function TabsDemo() {
       title: "Profile",
       value: "Profile",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className={style.tabcontent}>
           <p>Profile</p>
           <DummyContent />
         </div>
@@ -58,7 +59,7 @@ export default function TabsDemo() {
   ];
 
   return (
-    <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
+    <div className={style.tabcontainer}>
       <Tabs tabs={tabs} />
     </div>
   );
@@ -71,7 +72,7 @@ const DummyContent = () => {
       alt="dummy image"
       width="1000"
       height="1000"
-      className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+      className={style.image}
     />
   );
 };

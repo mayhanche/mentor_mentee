@@ -7,17 +7,6 @@
     justify-content: center; 
     align-items: center; 
 }
-/* 
-.nav{
-    padding: 10px 15px; 
-    display: flex; 
-}
-.logo{
-    color: #F0F3FA;
-    font-size: 32px; 
-    font-weight: 700;
-}
-*/
 .maindiv{
     background-color: #F0F3FA;
     border-radius: 20px;

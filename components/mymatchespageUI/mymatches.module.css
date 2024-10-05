@@ -3,38 +3,11 @@
     top: 60px; 
     left: 0px;
 }
-/* Side Nav bar */
-.sidenav{ 
-    width: 15%; 
-    height: 100vh;
-    padding: 30px; 
-    box-sizing: border-box; 
-    background-color: #F0F3FA;
-    margin-bottom: 300px;
-}
-.sidenav:hover{
-    box-shadow: 24px 2px 21px -21px rgba(0,0,0,0.1);
-}
 .contentdiv{
     width: 100%; 
     padding: 20px;
     height: 100vh;
     overflow-y: scroll;
-}
-.items{
-    list-style-type: none;
-}
-.items li{
-    margin: 40px 0px; 
-    cursor: pointer;
-    color: #00206B;
-    font-size: 20px;
-    font-weight: 700;
-}
-.profilediv{
-    margin-top: 250px; 
-    display: flex; 
-    justify-content: center; 
 }
 
 /* My Schedule Div */
@@ -42,7 +15,6 @@
     text-align: center;
     font-size: 30px; 
     font-weight: 800;
-    text-align: center;
     margin-bottom: 40px;
 }
 .text{

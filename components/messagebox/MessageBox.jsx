@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from 'react';
 
-
 const MessageBox = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const loadTawkTo = () => {

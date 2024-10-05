@@ -1,0 +1,58 @@
+.titlelist{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.title{
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    border: 1px solid #00206B;
+    border-radius: 10px;
+}
+.titleactive{
+    background-color: #00206B;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+/* .title:hover{
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+} */
+
+/* Testimonial Boxes */
+.testimonialdiv{
+    display: flex; 
+    justify-content: center;
+    gap: 100px;
+    margin-top: 64px;
+}
+.box{
+    border: 2px solid rgba(0, 52, 107, 0.55); 
+    border-radius: 6px; 
+    width: 350px; 
+    padding: 20px; 
+}
+.info{
+    display: flex; 
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.name{
+    font-size: 18px; 
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+.jobtitle{
+    font-size: 16px; 
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+.content{
+    font-size: 16px;    
+}
