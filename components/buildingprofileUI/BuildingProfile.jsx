@@ -1,17 +1,23 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import style from '@/components/buildingprofileUI/buildingprofile.module.css'
 
 const Buildingprofile = () => {
+    const [name, setName] = useState('');
+    const changeName = (event) =>{
+        setName(event.target.value)
+    }
+
   return (
-    <div className={style.maindiv}>
+    <div className='flex justify-between' >
         {/* Left Div */}
-        <div className={style.leftdiv}>
+        <div className='w-1/2'>
             <form className={style.formdiv}>
                 {/* Form Left Side */}
-                <div className= 'flex justify-center'>
-                <div className={style.formleft}>
+                <div className= 'flex justify-between '>
+                <div>
                     <label for="name" className={style.labels}>Name</label>
-                    <input type="text" id="name" className={style.input} required/>
+                    <input type="text" id="name" value={name} className={style.input} required onChange={changeName} />
 
                     <label for="job" className={style.labels}>Job title</label>
                     <input type="text" id="job" className={style.input}/>
@@ -27,7 +33,7 @@ const Buildingprofile = () => {
                 </div>
  
                 {/* Form Right Side */}
-                <div className={style.formright}>
+                <div>
                     <label for="country" className={style.labels}>Country</label>
                     <input type="text" id="country" className={style.input}/>
 
@@ -46,13 +52,12 @@ const Buildingprofile = () => {
                 </div>
                 {/* Bio Section */}
                 <label htmlFor="bio" className={style.labels}>Bio</label>
-                <textarea id="bio" className={style.input} style={{ width: '100%' }} required></textarea>
+                <textarea id="bio" rows="5" className={style.input} style={{ width: '100%', height: '150px' }} required></textarea>
             </form>
         </div>
-
         {/* Right div */}
-        <div clssName={style.leftdiv}>
-            <h1>Hello I am a student</h1>
+        <div className='mr-auto p-[50px] pt-[100px] ' >
+            <h1>Name : {name}</h1>
         </div>
     </div>
   )
