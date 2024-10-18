@@ -22,18 +22,14 @@ const Explore = () => {
             <div className='mt-[50px] mb-[200px]'>
               <div>
                 <ul className={style.titlelist}>
-                  <li className={style.title} onClick={() => toggleTab(1)} >Information Technology</li>
-                  <li className={style.title} onClick={() => toggleTab(2)} >Healthcare</li>
-                  <li className={style.title} onClick={() => toggleTab(3)} >Engineering</li>
-                  <li className={style.title} onClick={() => toggleTab(4)} >Business and Finance</li>
-                  <li className={style.title} onClick={() => toggleTab(5)} >Education</li>
-              </ul>
-              
+                  <li className={toggle == 1 ? style.titleactive : style.title} onClick={() => toggleTab(1)} >Information Technology</li>
+                  <li className={toggle == 2 ? style.titleactive : style.title} onClick={() => toggleTab(2)} >Healthcare</li>
+                  <li className={toggle == 3 ? style.titleactive : style.title} onClick={() => toggleTab(3)} >Engineering</li>
+                  <li className={toggle == 4 ? style.titleactive : style.title} onClick={() => toggleTab(4)} >Business and Finance</li>
+                  <li className={toggle == 5 ? style.titleactive : style.title} onClick={() => toggleTab(5)} >Education</li>
+                </ul>
               </div>
-
-            </div>
-            
-            
+            </div>   
         </div>
     </div>
   )

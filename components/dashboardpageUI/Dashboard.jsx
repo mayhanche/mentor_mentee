@@ -1,10 +1,21 @@
-
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import style from '@/components/dashboardpageUI/dashboard.module.css'
-
+import axios from 'axios';
 import SideNavBar from '../navbar/sideNavBar'
 
 const Sidenav = () => {
+  const [userName, setUserName ] = useState('');
+  useEffect(()=>{
+    getUserData()
+  },[])
+
+  const getUserData = async ()=>{
+    const response = await axios.get('http://127.0.0.1:5000/api/user')
+    console.log(response.data.name)
+    setUserName(response.data.name)
+  }
+
   return (
     <div className={style.maindiv}>
       {/* Side Nav bar */}
@@ -15,7 +26,7 @@ const Sidenav = () => {
         {/* Welcome Div */}
         <div className={style.welcomediv}>
           <div className={style.leftdiv}>
-            <h1 className={style.maintitle}>Glad you're here !</h1>
+            <h1 className={style.maintitle}>Glad you're here {userName} !</h1>
             <h3 className={style.text}>Success starts with the right mentor<br/>
             Begin your match-making journey!</h3>
           </div>

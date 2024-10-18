@@ -1,8 +1,10 @@
 'use client';
 import React from 'react'
 import style from '@/components/dashboardpageUI/globalnav.module.css'
+import { useRouter } from 'next/navigation'
 
 const Globalnav = () => {
+  const router = useRouter()
   return (
     <div className={style.nav}>
         <div className={style.logodiv}>
@@ -12,7 +14,7 @@ const Globalnav = () => {
             <img src="../../assets/icons/notification.svg" alt="Notification icon" width="30px"/>
         </div>
         <div className={style.btndiv}>
-            <button className={style.browse}>Browse Mentor</button>
+            <button onClick={() => router.push('./explore')} className={style.browse}>Browse Mentor</button>
         </div>
     </div>
   )

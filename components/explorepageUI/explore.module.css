@@ -40,11 +40,16 @@
     font-size: 18px;
     font-weight: 600;
     padding: 10px;
-    color: #F0F3FA;
-    background-color: #00206B;
     border: 1px solid #00206B;
     border-radius: 10px;
 }
-.title:hover{
-    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+.titleactive{
+    background-color: #00206B;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+
 }

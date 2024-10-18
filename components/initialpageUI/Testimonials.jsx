@@ -32,6 +32,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 I believe mentorship is crucial in IT. As a web developer, I can help guide mentees in mastering front-end frameworks, which will enhance their job prospects.
                             </div>
@@ -46,6 +47,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 For aspiring data analysts, a mentor can provide real-world insights into data manipulation, analysis, and visualization, which go beyond theory.
                             </div>
@@ -60,6 +62,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 Learning cloud architecture is complex. With a mentor's guidance, mentees can navigate the growing field of cloud computing with hands-on learning and practical advice.
                             </div>
@@ -78,6 +81,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 Navigating healthcare can be overwhelming. A mentor can guide mentees through the challenges of clinical practice, patient care, and career progression.
                             </div>
@@ -92,6 +96,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 Mentorship is essential in healthcare management. It provides mentees with a unique perspective on leadership, decision-making, and hospital operations
                             </div>
@@ -106,6 +111,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 Having a mentor in medical research is invaluable for understanding experimental design, research ethics, and career development in academic or clinical research.
                             </div>
@@ -124,6 +130,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 Engineering can be highly technical, and a mentor's experience helps mentees understand industry trends, project management, and practical problem-solving skills.
                             </div>
@@ -138,6 +145,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 For young engineers, mentorship is key in gaining real-world experience in infrastructure projects and understanding regulations and safety protocols.
                             </div>
@@ -152,6 +160,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 A mentor can guide aspiring engineers on industry-standard tools, advanced circuit design, and career paths in electrical engineering.
                             </div>
@@ -170,6 +179,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 In finance, understanding market trends and financial modeling can be challenging. A mentor helps translate theory into practical investment and decision-making skills."
                             </div>
@@ -184,6 +194,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 A business consultant mentor provides valuable insights into strategic planning, operations, and navigating corporate structures.
                             </div>
@@ -198,6 +209,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 Accounting is more than crunching numbers. Mentorship offers guidance on tax laws, financial audits, and growing in your accounting career
                             </div>
@@ -216,6 +228,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 Education is evolving, and mentors can help future educators by providing insight into teaching methodologies, curriculum design, and student engagement strategies.
                             </div>
@@ -230,6 +243,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 As a mentor, I aim to help aspiring school leaders navigate the complexities of educational management, staff development, and policy implementation
                             </div>
@@ -244,6 +258,7 @@ const Testimonials = () => {
                                     </p>
                                 </span>
                             </div>
+                            <hr className={style.line}/>
                             <div className={style.content}>
                                 I can help mentees understand how to design lesson plans that align with educational standards while also fostering creativity and critical thinking in students.
                             </div>

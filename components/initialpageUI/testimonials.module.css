@@ -33,14 +33,14 @@
     margin-top: 64px;
 }
 .box{
-    border: 2px solid rgba(0, 52, 107, 0.55); 
-    border-radius: 6px; 
+    border: 2px solid #00206B; 
+    border-radius: 10px; 
     width: 350px; 
     padding: 20px; 
 }
 .info{
     display: flex; 
-    gap: 8px;
+    gap: 16px;
     margin-bottom: 8px;
 }
 .name{
@@ -50,9 +50,16 @@
 }
 .jobtitle{
     font-size: 16px; 
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 7px;
 }
+.line{
+    height: 2px;
+    background-color: #00206B;
+    margin-bottom: 10px;
+}
 .content{
-    font-size: 16px;    
+    font-size: 16px; 
+    font-weight: 500;
+    line-height: 30px;   
 }
