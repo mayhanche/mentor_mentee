@@ -99,10 +99,10 @@ const Sidenav = () => {
             <div className={style.line}></div>
           </div>
         </div>
-
       </div>
+
     </div>
   )
 }
 
-export default Sidenav
+export default Sidenav;

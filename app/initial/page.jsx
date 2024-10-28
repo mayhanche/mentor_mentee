@@ -17,7 +17,7 @@ const page = () => {
       {/* <Sponser/> */}
       <Contact/>
       <Footer/>
-    </div>
+    </div>  
   )
 }
 

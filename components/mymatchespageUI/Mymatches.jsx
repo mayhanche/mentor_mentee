@@ -5,16 +5,24 @@ import axios from 'axios';
 import SideNavBar from '../navbar/sideNavBar'
 
 const Mymatches = () => {
-    const [mentorName, setMentorName ] = useState('May');
+    const [mentorName, setMentorName ] = useState('');
+    const [day, setDay ] = useState('');
     useEffect(()=>{
         getMentorData()
+        getDate()
     },[])
-
-  const getMentorData = async ()=>{
+    
+    const getMentorData = async ()=>{
     const response = await axios.get('http://127.0.0.1:5000/api/mentor')
     console.log(response.data.name)
     setMentorName(response.data.name)
-  }
+    }
+
+    const getDate = async ()=>{
+        const response = await axios.get('http://127.0.0.1:5000/api/mentor')
+        console.log(response.data.date)
+        setDay(response.data.date)
+    }
 
   return (
     <div class={style.maindiv}>
@@ -28,7 +36,7 @@ const Mymatches = () => {
                 <h1 className={style.title}>My Schedule</h1>
                 <div className={style.text}>
                     <p>You have a session with <b>{mentorName}</b></p><br/>
-                    <p>Meeting will start from <b>9:00 AM to 10:00 AM</b> on <b>Sep 30, 2024</b></p><br/>
+                    <p>Meeting will start from <b>9:00 AM to 10:00 AM</b> on <b>{day}</b></p><br/>
                     <a href="#"><b>Zoom meeting link</b></a><br/><br/>
                     <p>This link will be only available when it reaches to the given session time</p>
                 </div>
