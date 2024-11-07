@@ -1,17 +1,32 @@
 'use client'
-import React from 'react'
+// import React from 'react'
+import { useState } from "react"
 import style from "@/components/loginpageUI/signup.module.css"
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { useAuthStore } from "@/store/auth"
+
 
 const Signup = () => {
   const router = useRouter()
+  const [ username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isShowPw, setIsShowPw] = useState(false);
+
+  const { isSignUp, signup } = useAuthStore()
+
+  const onSubmitSignUpHandler = async (e) =>{
+    e.preventDefault();
+    signup({username, email, password})
+  }
+
+  const showPassword = () =>{
+    setIsShowPw(!isShowPw)
+  }
+
   return (
     <div className={style.wholediv}>
-      {/*
-        <div className={style.nav}>
-          <h1 className={style.logo}>Logo</h1>
-        </div>
-      */}
 
         <div className={style.maindiv}>
           <div className={style.leftdiv}>
@@ -19,19 +34,49 @@ const Signup = () => {
           </div>
           <div className={style.rightdiv}>
             <h1 className={style.title}>Sign Up</h1>
-            <form className={style.form}>
-              <label for="email" className={style.labels}>Email</label>
-              <input type="email" id="email" className={style.input}/>
-              <label for="psw" className={style.labels}>Password</label>
-              <input type="password" id="psw" className={style.input}/><br/>
-              <label for="psw" className={style.labels}>Confirm Password</label>
-              <input type="password" id="psw" className={style.input}/><br/>
-              <input type="checkbox" id="showpsw"/>
-              <label for="showpsw" className={style.showpsw}>Show password</label><br/>
+
+            <form className={style.form} onSubmit={onSubmitSignUpHandler} >
+              <label htmlFor="username" className={style.labels}>
+                User Name
+              </label>
+              <input 
+                type="text" 
+                id="username" 
+                className={style.input}
+                placeholder='Enter Name'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+
+              <label htmlFor="email" className={style.labels}>Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                className={style.input}
+                placeholder='Enter Email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+
+              <label htmlFor="psw" className={style.labels}>Password</label>
+              <input 
+                type={isShowPw ? 'text' : 'password'} 
+                id="psw" 
+                className={style.input}
+                placeholder='Enter Password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+
+              <div className='flex items-center ' >
+                <input type="checkbox" id="showpsw"/>
+                <label htmlFor="showpsw" onClick={showPassword} className="cursor-pointer ml-3 " >Show password</label>
+              </div>
+              <button className={style.signup}>Sign Up</button>
             </form>
-              <button onClick={()=> router.push('/dashboard')}  className={style.signup}>Sign Up</button>
-            <div className={style.links}>
-              <a href="#">Already have an account ? Log In</a>
+
+            <div className="p-[30px] font-[500] text-center "  >
+              <Link href="/login">Already have an account ? Log In</Link>
             </div>
           </div>
         </div>

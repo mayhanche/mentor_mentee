@@ -10,7 +10,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "// Or if using src directory:\r\n    ./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/[object Object].js"
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
   theme: {
@@ -22,7 +22,9 @@ module.exports = {
       },
     },
   },
-  plugins: [addVariablesForColors,nextui()],
+  // plugins: [addVariablesForColors,nextui()],
+  darkMode: "class",
+  plugins: [nextui()],
 };
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }: any) {
