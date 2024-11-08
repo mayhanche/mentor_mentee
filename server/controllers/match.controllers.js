@@ -6,17 +6,20 @@ import { User } from '../models/user.model.js';
 import { Mentor } from '../models/mentor.model.js';
 import ContentBasedRecommender from 'content-based-recommender';
 
+// FINDING FIELD 
 export const field = async (req,res) => {
     try {
         const fields = await Field.find();
         console.log(fields)
         res.status(200).json({ content : fields, success: true });
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error);
         res.status(500).json({ message: 'Internal Server Error', success: false });
     }
 }
 
+// FINDING CAREER 
 export const career = async (req,res) => {
     try {
         const { field } = req.body;
@@ -26,52 +29,60 @@ export const career = async (req,res) => {
                 field : field,
             }
         });
+
+        // Career validation 
         if(!career){
             res.status(400).json({ message: "Career not found", success: false });
         }
 
         res.status(200).json({ content : career, success: true });
-
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Internal Server Error', success: false });
     }
 }
 
+// FINDING SPECIALIZATION 
 export const specialization= async (req, res) => {
     try {
         const { career } = req.body;
         const specialization = await Specialization.findOne({ career : career })
 
+        // Specialization validation 
         if(!specialization){
             res.status(400).json({ message: "Specialization not found", success: false });
         }
 
         res.status(200).json({ content : specialization, success: true });
-
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Internal Server Error', success: false });
     }
 }
 
+// FINDING SKILLS 
 export const getSkill= async (req, res) => {
     try {
         const { specialization } = req.body;
         const skill = await Skill.findOne({ specialization : specialization })
 
+        // Skill validation 
         if(!skill){
             res.status(400).json({ message: "skill not found", success: false });
         }
 
         res.status(200).json({ content : skill, success: true });
 
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Internal Server Error', success: false });
     }
 }
 
+// SAVE MENTEE CHOICES IN DB BY ID
 export const updateMenteesChoices = async (req, res) => {
     try {
         const { career, specialization, skills } = req.body;
@@ -87,24 +98,26 @@ export const updateMenteesChoices = async (req, res) => {
         });
 
         res.status(200).json({ message: "Mentees choices updated successfully", success: true });
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Internal Server Error', success: false });
     }
 }
 
+// MATCHING 
 export const matching = async (req, res) => {
     try {
         const user = await User.findById(req.user._id);
         const { field, career, skills } = user;
         
-        // Try to find mentors with case-insensitive match for field and career
+        // Finding mentors with case-insensitive match for field and career
         const mentorsFilteredByFieldAndCareer = await Mentor.find({
             field: { $regex: new RegExp(`^${field}$`, "i") },
             career: { $regex: new RegExp(`^${career}$`, "i") }
         });
 
-        // Content based recommender
+        // Content Based Recommender
 
         // User id and specification
         const posts = [
@@ -127,11 +140,11 @@ export const matching = async (req, res) => {
         const recommender = new ContentBasedRecommender({
             minScore: 0.1,
             maxSimilarDocuments: 10
-          });
+        });
 
         recommender.trainBidirectional(posts, tags);
 
-        let mentorsFilteredBySpecification = []
+        let mentorsFilteredBySpecification = [];
         for (let post of posts) {
             const relatedTags = recommender.getSimilarDocuments(post.id);
             mentorsFilteredBySpecification.push(...relatedTags);
@@ -160,7 +173,8 @@ export const matching = async (req, res) => {
         });
 
         res.status(200).json({ success: true });
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Internal Server Error', success: false });
     }
