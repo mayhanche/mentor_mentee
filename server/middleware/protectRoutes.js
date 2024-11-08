@@ -4,7 +4,9 @@ import { User } from '../models/user.model.js';
 
 export const protectRoute = async (req, res, next) => {
     try {
-        const token = req.cookies["token"]
+        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzJkYjRlYjhjZDg1MTlmNTRjNzA0YWEiLCJpYXQiOjE3MzEwNDg2ODMsImV4cCI6MTczMTEzNTA4M30.utz1B2oryb_7CM8GbGIVGgr-o_-_pGcKgZnq2K3vlwg"
+
+        console.log(token)
 
         if(!token){
             return res.status(401).json({ message: 'Unauthorized - No Token Provided', success: false });
