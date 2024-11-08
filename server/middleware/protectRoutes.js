@@ -4,7 +4,7 @@ import { User } from '../models/user.model.js';
 
 export const protectRoute = async (req, res, next) => {
     try {
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzJkYjRlYjhjZDg1MTlmNTRjNzA0YWEiLCJpYXQiOjE3MzEwNDg2ODMsImV4cCI6MTczMTEzNTA4M30.utz1B2oryb_7CM8GbGIVGgr-o_-_pGcKgZnq2K3vlwg"
+        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzJkYzI5MmNkN2EzZTdiYWFhZDQxNjAiLCJpYXQiOjE3MzEwNTIxNzgsImV4cCI6MTczMTEzODU3OH0.Tkgu2gOO0EsUxXzxLCbKGXG0jyDJsF3nLycNp7ScMfQ"
 
         console.log(token)
 

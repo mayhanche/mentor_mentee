@@ -149,9 +149,12 @@ export const matching = async (req, res) => {
                 )
             )
         )
+        console.log(matchedMentors);
        
         // Sort by name in ascending order
         const sortedMentors = matchedMentors.sort((a, b) => a.name.localeCompare(b.name));
+
+        console.log(sortedMentors); 
 
         await User.findByIdAndUpdate(req.user._id,{
             $push: {
