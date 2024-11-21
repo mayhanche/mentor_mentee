@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: true,
         unique: true,
         minlength: 3,
     },
@@ -43,6 +42,22 @@ const userSchema = new mongoose.Schema({
     matchedWith : {
         type : Array,
         default : [],
+    },
+    country : {
+        type: String,
+        default : "",
+    },
+    job_title : {
+        type: String,
+        default : "",
+    },
+    company : {
+        type: String,
+        default : "",
+    },
+    experience : {
+        type: String,
+        default : "",
     }
 })
 

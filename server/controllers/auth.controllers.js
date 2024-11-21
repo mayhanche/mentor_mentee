@@ -4,11 +4,11 @@ import { generateTokenAndSetCookie } from "../utils/generateJwtToken.js";
 
 export const signUp = async (req, res) =>{
     try {
-        const { username, password, email } = req.body;
+        const { password, email } = req.body;
 
-        if(!username || !password || !email) {
-            return res.status(400).json({ message: 'All fields are required', success: false });
-        }
+        // if(!username || !password || !email) {
+        //     return res.status(400).json({ message: 'All fields are required', success: false });
+        // }
 
         //email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -27,28 +27,29 @@ export const signUp = async (req, res) =>{
             return res.status(400).json({ message: 'Email already exists', success: false });
         }
 
-        const exitingUserByUsername = await User.findOne({username : username});
+        // const exitingUserByUsername = await User.findOne({username : username});
 
-        if(exitingUserByUsername){
-            return res.status(400).json({ message: 'Username already exists', success: false });
-        }
+        // if(exitingUserByUsername){
+        //     return res.status(400).json({ message: 'Username already exists', success: false });
+        // }
 
         const salt = await bcryptjs.genSalt(10)
         const hashedPassword = await bcryptjs.hash(password, salt)
       
 
         const newUser = new User({
-            username,
+            // username,
             password: hashedPassword,
             email,
         });
-        console.log("...newUser",newUser)
+        
         if(newUser){
-            generateTokenAndSetCookie(newUser._id, res);
+            const token = generateTokenAndSetCookie(newUser._id, res);
             await newUser.save();
             res.status(201).json({success: true, user: {
                 ...newUser._doc,
                 password: '',
+                token: token,
             } });
         }
 
