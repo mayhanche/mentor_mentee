@@ -34,9 +34,11 @@ import { User } from '../models/user.model.js';
 
 export const protectRoute = async (req, res, next) => {
     try {
+
         const authHeader = req.headers['authorization'];
         const token = authHeader && authHeader.split(' ')[1];
         console.log("Token from header:", token);
+
 
         if (!token) {
             return res.status(401).json({ message: 'Unauthorized - No Token Provided', success: false });
