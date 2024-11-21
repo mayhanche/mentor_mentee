@@ -18,7 +18,10 @@ import { protectRoute } from './middleware/protectRoutes.js';
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3001', // replace with your frontend URL
+  credentials: true, // allow cookies to be included
+}));
 
 app.use("/api/v1/auth", authRouters)
 app.use("/api/v1/match",protectRoute, matchRouters)

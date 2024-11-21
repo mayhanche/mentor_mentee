@@ -1,6 +1,6 @@
 'use client'
 // import React from 'react'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import style from "@/components/loginpageUI/signup.module.css"
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
@@ -8,12 +8,18 @@ import { useAuthStore } from "@/store/auth"
 
 
 const Signup = () => {
+  const { user } = useAuthStore()
   const router = useRouter()
+  useEffect(()=> {
+    if(user){
+      router.push('/buildingprofile')
+      return
+    }
+  },[user])
   const [ username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isShowPw, setIsShowPw] = useState(false);
-
   const { isSignUp, signup } = useAuthStore()
 
   const onSubmitSignUpHandler = async (e) =>{
@@ -72,7 +78,9 @@ const Signup = () => {
                 <input type="checkbox" id="showpsw"/>
                 <label htmlFor="showpsw" onClick={showPassword} className="cursor-pointer ml-3 " >Show password</label>
               </div>
-              <button className={style.signup}>Sign Up</button>
+              {/* <Link href="/buildingprofile"> */}
+                <button className={style.signup}>Sign Up</button>
+              {/* </Link> */}
             </form>
 
             <div className="p-[30px] font-[500] text-center "  >

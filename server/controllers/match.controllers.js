@@ -19,13 +19,20 @@ export const field = async (req,res) => {
 
 export const career = async (req,res) => {
     try {
-        const { field } = req.body;
+        const { field, username, country, job_title, company, experience, bio } = req.body;
         const career = await Career.findOne({field : field});
         await User.findByIdAndUpdate(req.user._id,{
             $set : {
-                field : field,
+                field,
+                username,
+                country,
+                job_title,
+                company,
+                experience,
+                bio
             }
         });
+
         if(!career){
             res.status(400).json({ message: "Career not found", success: false });
         }
@@ -41,11 +48,18 @@ export const career = async (req,res) => {
 export const specialization= async (req, res) => {
     try {
         const { career } = req.body;
+
         const specialization = await Specialization.findOne({ career : career })
 
         if(!specialization){
             res.status(400).json({ message: "Specialization not found", success: false });
         }
+        
+        await User.findByIdAndUpdate(req.user._id, {
+            $set : {
+                career,
+            }
+        })
 
         res.status(200).json({ content : specialization, success: true });
 
@@ -58,11 +72,19 @@ export const specialization= async (req, res) => {
 export const getSkill= async (req, res) => {
     try {
         const { specialization } = req.body;
+        console.log( "specialization", specialization );
         const skill = await Skill.findOne({ specialization : specialization })
+        console.log( "skill", skill );
 
         if(!skill){
             res.status(400).json({ message: "skill not found", success: false });
         }
+
+        await User.findByIdAndUpdate(req.user._id, {
+            $set : {
+                specification: specialization,
+            }
+        })
 
         res.status(200).json({ content : skill, success: true });
 
@@ -74,24 +96,31 @@ export const getSkill= async (req, res) => {
 
 export const updateMenteesChoices = async (req, res) => {
     try {
-        const { career, specialization, skills } = req.body;
+        const { skills } = req.body;
 
-        await User.findByIdAndUpdate(req.user._id,{
-            $set: {
-                career: career,
-                specification: specialization,
-            },
-            $push: {
-                skills: { $each: skills },
-            }
-        });
+        // Find the user and get their current skills
+        const user = await User.findById(req.user._id);
+        const existingSkills = user.skills;
+
+        // Filter skills that are not already in the user's skill set
+        const newSkills = skills.filter(skill => !existingSkills.includes(skill));
+
+        // Update only if there are new skills to add
+        if (newSkills.length > 0) {
+            await User.findByIdAndUpdate(req.user._id, {
+                $push: {
+                    skills: { $each: newSkills },
+                }
+            });
+        }
 
         res.status(200).json({ message: "Mentees choices updated successfully", success: true });
     } catch (error) {
-        console.log(error)
+        console.log(error);
         res.status(500).json({ message: 'Internal Server Error', success: false });
     }
-}
+};
+
 
 export const matching = async (req, res) => {
     try {
@@ -151,11 +180,11 @@ export const matching = async (req, res) => {
         )
        
         // Sort by name in ascending order
-        const sortedMentors = matchedMentors.sort((a, b) => a.name.localeCompare(b.name));
+        // const sortedMentors = matchedMentors.sort((a, b) => a.name.localeCompare(b.name));
 
         await User.findByIdAndUpdate(req.user._id,{
             $push: {
-                matchedWith : { $each: sortedMentors },
+                matchedWith : { $each: matchedMentors },
             }
         });
 
