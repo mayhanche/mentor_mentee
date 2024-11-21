@@ -16,9 +16,10 @@ const Testimonials = () => {
                 <li className={toggle == 2 ? style.titleactive : style.title} onClick={() => toggleTab(2)} >Healthcare</li>
                 <li className={toggle == 3 ? style.titleactive : style.title} onClick={() => toggleTab(3)} >Engineering</li>
                 <li className={toggle == 4 ? style.titleactive : style.title} onClick={() => toggleTab(4)} >Business and Finance</li>
-                <li className={toggle == 5 ? style.titleactive : style.title} onClick={() => toggleTab(5)} >Education</li>
+                <li className={toggle == 5 ? style.titleactive : style.title} onClick={() => toggleTab(5)} >Art and Design</li>
             </ul>
 
+            {/* Information Technology */}
             <div>
                 <div className={toggle === 1 ? 'block' : 'hidden' }>
                     <div className={style.testimonialdiv} >
@@ -26,24 +27,24 @@ const Testimonials = () => {
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Sarah Mitchell</p>
+                                    <p className={style.name}>Arjun Reddy</p>
                                     <p className={style.jobtitle}>
-                                        Web Developer
+                                    Front-end developer 
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                I believe mentorship is crucial in IT. As a web developer, I can help guide mentees in mastering front-end frameworks, which will enhance their job prospects.
+                                I believe mentorship is crucial in IT. As a web developer, I can help guide mentees in mastering front-end frameworks, which will enhance job prospects.
                             </div>
                         </div>
                         <div className={style.box} >
                             <div className={style.info} >
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Sarah Kim</p>
+                                    <p className={style.name}>Yu Thandar Khin</p>
                                     <p className={style.jobtitle}>
-                                       Data Analyst
+                                       Data analyst
                                     </p>
                                 </span>
                             </div>
@@ -56,154 +57,157 @@ const Testimonials = () => {
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>David Lee</p>
+                                    <p className={style.name}>Edward J</p>
                                     <p className={style.jobtitle}>
-                                        Cloud Architect
+                                    Technical support engineer
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                Learning cloud architecture is complex. With a mentor's guidance, mentees can navigate the growing field of cloud computing with hands-on learning and practical advice.
+                                As a Technical Support Engineer, I mentor mentees in troubleshooting, resolving issues, and improving communication, helping them with career opportunities.
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* Healthcare */}
                 <div className={toggle === 2 ? 'block' : 'hidden' }>
                 <div className={style.testimonialdiv} >
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Laura Walker</p>
+                                    <p className={style.name}>Dr. Mateo Gomez</p>
                                     <p className={style.jobtitle}>
-                                        Registered Nurse
+                                    Cardiologist
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                Navigating healthcare can be overwhelming. A mentor can guide mentees through the challenges of clinical practice, patient care, and career progression.
+                            Being a cardiologist, I guide upcoming professionals in mastering advanced heart care, diagnostics, and patient management, helping them build expertise in cardiovascular health.
                             </div>
                         </div>
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Anthony Garcia</p>
+                                    <p className={style.name}>Zoe Davis</p>
                                     <p className={style.jobtitle}>
-                                        Healthcare Administrator
+                                    ER nurse
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                Mentorship is essential in healthcare management. It provides mentees with a unique perspective on leadership, decision-making, and hospital operations
+                            As an ER nurse, I guide aspiring healthcare professionals in emergency care, decision-making, and patient management, building their confidence and expertise.
                             </div>
                         </div>
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Emily Sanchez</p>
+                                    <p className={style.name}>Dr. Olivia Rao</p>
                                     <p className={style.jobtitle}>
-                                        Medical Researcher
+                                        Child therapist
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                Having a mentor in medical research is invaluable for understanding experimental design, research ethics, and career development in academic or clinical research.
+                            I help guide new professionals in understanding children's emotions, behaviors, and therapeutic approaches, fostering their ability to support young clients effectively.
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* Engineering */}
                 <div className={toggle === 3 ? 'block' : 'hidden' }>
                 <div className={style.testimonialdiv} >
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Robert Davis</p>
+                                    <p className={style.name}>Evan Wang</p>
                                     <p className={style.jobtitle}>
-                                        Mechanical Engineer
+                                        Manufacturing engineer
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                Engineering can be highly technical, and a mentor's experience helps mentees understand industry trends, project management, and practical problem-solving skills.
+                            As a Manufacturing Engineer, I help guide mentees through process improvement, automation, and quality control and grow their technical skills and advance professionally.
                             </div>
                         </div>
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Jessica Brown</p>
+                                    <p className={style.name}>Thar Aung Zaw</p>
                                     <p className={style.jobtitle}>
-                                        Civil Engineer
+                                    Control systems engineer
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                For young engineers, mentorship is key in gaining real-world experience in infrastructure projects and understanding regulations and safety protocols.
+                            I guide mentees about the complexities of system design, optimization, and implementation. I want them sharpen their technical expertise and career growth.
                             </div>
                         </div>
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Christopher Martinez </p>
+                                    <p className={style.name}>Karnan Chhabara</p>
                                     <p className={style.jobtitle}>
-                                        Electrical Engineer
+                                    Construction manager
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                A mentor can guide aspiring engineers on industry-standard tools, advanced circuit design, and career paths in electrical engineering.
+                            I mentor emerging professionals in project planning, site management, and team coordination, helping them develop leadership skills and succeed in the industry.
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* Business and Finance */}
                 <div className={toggle === 4 ? 'block' : 'hidden' }>
                 <div className={style.testimonialdiv} >
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Linda Anderso</p>
+                                    <p className={style.name}>David Jordan</p>
                                     <p className={style.jobtitle}>
-                                        Financial Analyst
+                                    Human resources manager
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                In finance, understanding market trends and financial modeling can be challenging. A mentor helps translate theory into practical investment and decision-making skills."
+                            About talent acquisition, employee relations, and organizational development, building strong leadership and advance in HR will be shared.
                             </div>
                         </div>
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>James Wilson</p>
+                                    <p className={style.name}>Nikcole</p>
                                     <p className={style.jobtitle}>
-                                        Business Consultant
+                                    Market research analyst
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                A business consultant mentor provides valuable insights into strategic planning, operations, and navigating corporate structures.
+                            Mentees have to learn analyzing trends and consumer insightst. They will provide data-driven strategies that drive impactful business decisions and lead to success.
                             </div>
                         </div>
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Ashley Thompson</p>
+                                    <p className={style.name}>Kyi Sin Swe</p>
                                     <p className={style.jobtitle}>
                                         Accountant
                                     </p>
@@ -211,56 +215,57 @@ const Testimonials = () => {
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                Accounting is more than crunching numbers. Mentorship offers guidance on tax laws, financial audits, and growing in your accounting career
+                            Guiding future accountants, I focus on refining their skills in financial analysis, tax strategies, and budgeting. I will help to build confidence and achieve professional growth.
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* Art and Design */}
                 <div className={toggle === 5 ? 'block' : 'hidden' }>
                     <div className={style.testimonialdiv}>
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Jennifer Moore</p>
+                                    <p className={style.name}>Naree Soma</p>
                                     <p className={style.jobtitle}>
-                                        Educational Consultant
+                                        Digital artist
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                Education is evolving, and mentors can help future educators by providing insight into teaching methodologies, curriculum design, and student engagement strategies.
+                            Helping aspiring digital artists navigate tools and techniques to transform their visions into stunning works of art, I encourage bold creativity and technical precision.
                             </div>
                         </div>
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Matthew Clark </p>
+                                    <p className={style.name}>Richard Henson</p>
                                     <p className={style.jobtitle}>
-                                        School Principal
+                                        Brand designer
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                As a mentor, I aim to help aspiring school leaders navigate the complexities of educational management, staff development, and policy implementation
+                            Through mentorship, I teach future brand designers how to craft authentic, eye-catching identities that resonate with audiences, blending strategy with artistry for lasting impact.
                             </div>
                         </div>
                         <div className={style.box}>
                             <div className={style.info}>
                                 <img src="/assets/icons/profile.svg" alt="profile" />
                                 <span>
-                                    <p className={style.name}>Rachel Adams</p>
+                                    <p className={style.name}>Rui Ji Yuk</p>
                                     <p className={style.jobtitle}>
-                                        Curriculum Developer
+                                        Character animator
                                     </p>
                                 </span>
                             </div>
                             <hr className={style.line}/>
                             <div className={style.content}>
-                                I can help mentees understand how to design lesson plans that align with educational standards while also fostering creativity and critical thinking in students.
+                            I guide learners in creating dynamic, emotionally rich characters, focusing on the power of movement and expression to bring animated stories to life in fresh, compelling ways.
                             </div>
                         </div>
                     </div>

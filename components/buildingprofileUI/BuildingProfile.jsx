@@ -165,7 +165,6 @@ const Buildingprofile = () => {
                     <h2 className={style.smalltitle}>Job Experience</h2>
                 </div>
             </div>  
-
         </div>
     </div>
   )

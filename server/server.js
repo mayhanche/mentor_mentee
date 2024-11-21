@@ -1,6 +1,9 @@
 import express from 'express';
 import authRouters from './routes/auth.routes.js'
 import matchRouters from './routes/match.routes.js'
+import blogRouters from './routes/blog.routes.js';
+import announcementRouters from './routes/announcement.routes.js';
+import profileRouters from './routes/profile.routes.js';
 
 // Connect to the Mongo DB
 import { connectDB } from './configs/db.js'
@@ -25,6 +28,9 @@ app.use(cors({
 
 app.use("/api/v1/auth", authRouters)
 app.use("/api/v1/match",protectRoute, matchRouters)
+app.use("/api/v1/blog", blogRouters)
+app.use("/api/v1/announcement", announcementRouters)
+app.use("/api/v1/profile", profileRouters)
 
 app.listen(ENV_VARS.PORT, () => {
   console.log(`Example app listening on port ${ENV_VARS.PORT}`)

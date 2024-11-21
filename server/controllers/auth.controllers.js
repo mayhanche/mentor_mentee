@@ -80,13 +80,9 @@ export const login = async (req, res) => {
             return res.status(400).json({ message: 'User name or password is wrong.', success: false });
         }
 
-        generateTokenAndSetCookie(user._id, res);
+        const token = generateTokenAndSetCookie(user._id, res);
 
-        res.status(200).json({ success: true, 
-            user: {
-                ...user._doc,
-                password : '',
-            }})
+        res.status(200).json({ success: true, token : token })
 
     } catch (error) {
         console.log(error.message)

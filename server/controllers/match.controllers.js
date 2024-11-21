@@ -10,6 +10,7 @@ export const field = async (req,res) => {
     try {
         const fields = await Field.find();
         console.log(fields)
+
         res.status(200).json({ content : fields, success: true });
     } catch (error) {
         console.log(error);
@@ -151,7 +152,6 @@ export const matching = async (req, res) => {
                 content: mentor.job_title.trim(),
             })
         })
-        console.log("Tags:", tags);
 
         const recommender = new ContentBasedRecommender({
             minScore: 0.1,
@@ -181,6 +181,8 @@ export const matching = async (req, res) => {
        
         // Sort by name in ascending order
         // const sortedMentors = matchedMentors.sort((a, b) => a.name.localeCompare(b.name));
+
+        console.log(sortedMentors); 
 
         await User.findByIdAndUpdate(req.user._id,{
             $push: {
