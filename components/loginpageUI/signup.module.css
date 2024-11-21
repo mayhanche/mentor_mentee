@@ -7,23 +7,12 @@
     justify-content: center; 
     align-items: center; 
 }
-/*
-.nav{
-    padding: 10px 15px; 
-    display: flex; 
-    justify-content: start;
-}
-.logo{
-    color: #F0F3FA;
-    font-size: 32px; 
-    font-weight: 700;
-}
-*/
+
 .maindiv{
     background-color: #F0F3FA;
     border-radius: 20px;
     width: 60%; 
-    height: 600px; 
+    height: 500px; 
     margin: auto;
     padding: 20px;
     display: flex;

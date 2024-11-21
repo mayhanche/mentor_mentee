@@ -52,7 +52,7 @@ const Buildingprofile = () => {
                         <option value="Healthcare">Healthcare</option>
                         <option value="Engineering">Engineering</option>
                         <option value="Business and Finance">Business and Finance</option>
-                        <option value="Education">Education</option>
+                        <option value="Art and Design">Art and Design</option>
                     </select>
                 </div>
  
@@ -61,7 +61,7 @@ const Buildingprofile = () => {
                     <label for="country" className={style.labels}>Country</label>
                     <input type="text" id="country" className={style.input} onChange={changeCountry}/>
 
-                    <label for="uni" className={style.labels}>Company</label>
+                    <label for="uni" className={style.labels}>University</label>
                     <input type="text" id="uni" className={style.input} onChange={changeUni}/>
 
                     <label for="level" className={style.labels}>Proficiency level</label>
@@ -111,7 +111,6 @@ const Buildingprofile = () => {
                     <h2 className={style.smalltitle}>Job Experience</h2>
                 </div>
             </div>  
-
         </div>
     </div>
   )

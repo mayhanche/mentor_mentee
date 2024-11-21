@@ -26,7 +26,7 @@ const Explore = () => {
                   <li className={toggle == 2 ? style.titleactive : style.title} onClick={() => toggleTab(2)} >Healthcare</li>
                   <li className={toggle == 3 ? style.titleactive : style.title} onClick={() => toggleTab(3)} >Engineering</li>
                   <li className={toggle == 4 ? style.titleactive : style.title} onClick={() => toggleTab(4)} >Business and Finance</li>
-                  <li className={toggle == 5 ? style.titleactive : style.title} onClick={() => toggleTab(5)} >Education</li>
+                  <li className={toggle == 5 ? style.titleactive : style.title} onClick={() => toggleTab(5)} >Art and Design</li>
                 </ul>
               </div>
             </div>   

@@ -10,6 +10,7 @@ export const field = async (req,res) => {
     try {
         const fields = await Field.find();
         console.log(fields)
+
         res.status(200).json({ content : fields, success: true });
     } catch (error) {
         console.log(error);
@@ -87,7 +88,8 @@ export const updateMenteesChoices = async (req, res) => {
         });
 
         res.status(200).json({ message: "Mentees choices updated successfully", success: true });
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Internal Server Error', success: false });
     }
@@ -122,7 +124,6 @@ export const matching = async (req, res) => {
                 content: mentor.job_title.trim(),
             })
         })
-        console.log("Tags:", tags);
 
         const recommender = new ContentBasedRecommender({
             minScore: 0.1,
@@ -149,7 +150,6 @@ export const matching = async (req, res) => {
                 )
             )
         )
-        console.log(matchedMentors);
        
         // Sort by name in ascending order
         const sortedMentors = matchedMentors.sort((a, b) => a.name.localeCompare(b.name));

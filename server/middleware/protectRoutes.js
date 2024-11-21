@@ -4,7 +4,7 @@ import { User } from '../models/user.model.js';
 
 export const protectRoute = async (req, res, next) => {
     try {
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzJkYzI5MmNkN2EzZTdiYWFhZDQxNjAiLCJpYXQiOjE3MzEwNTIxNzgsImV4cCI6MTczMTEzODU3OH0.Tkgu2gOO0EsUxXzxLCbKGXG0jyDJsF3nLycNp7ScMfQ"
+        const token = req.cookies["token"]
 
         console.log(token)
 

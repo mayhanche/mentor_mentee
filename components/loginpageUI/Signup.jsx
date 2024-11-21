@@ -36,17 +36,6 @@ const Signup = () => {
             <h1 className={style.title}>Sign Up</h1>
 
             <form className={style.form} onSubmit={onSubmitSignUpHandler} >
-              <label htmlFor="username" className={style.labels}>
-                User Name
-              </label>
-              <input 
-                type="text" 
-                id="username" 
-                className={style.input}
-                placeholder='Enter Name'
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
 
               <label htmlFor="email" className={style.labels}>Email</label>
               <input 
@@ -68,14 +57,14 @@ const Signup = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-              <div className='flex items-center ' >
+              <div className="flex items-center">
                 <input type="checkbox" id="showpsw"/>
                 <label htmlFor="showpsw" onClick={showPassword} className="cursor-pointer ml-3 " >Show password</label>
               </div>
               <button className={style.signup}>Sign Up</button>
             </form>
 
-            <div className="p-[30px] font-[500] text-center "  >
+            <div className="p-[30px] font-[500] text-center"  >
               <Link href="/login">Already have an account ? Log In</Link>
             </div>
           </div>
