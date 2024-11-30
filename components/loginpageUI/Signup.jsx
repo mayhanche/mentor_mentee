@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuthStore } from "@/store/auth"
 
-
 const Signup = () => {
   const { user } = useAuthStore()
   const router = useRouter()
@@ -16,11 +15,11 @@ const Signup = () => {
       return
     }
   },[user])
-  const [ username, setUsername] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isShowPw, setIsShowPw] = useState(false);
-  const { isSignUp, signup } = useAuthStore()
+  const {isSignUp, signup } = useAuthStore()
 
   const onSubmitSignUpHandler = async (e) =>{
     e.preventDefault();
@@ -65,14 +64,14 @@ const Signup = () => {
 
               <div className="flex items-center">
                 <input type="checkbox" id="showpsw"/>
-                <label htmlFor="showpsw" onClick={showPassword} className="cursor-pointer ml-3 " >Show password</label>
+                <label htmlFor="showpsw" onClick={showPassword} className="cursor-pointer ml-3 ">Show password</label>
               </div>
               {/* <Link href="/buildingprofile"> */}
                 <button className={style.signup}>Sign Up</button>
               {/* </Link> */}
             </form>
 
-            <div className="p-[30px] font-[500] text-center"  >
+            <div className="p-[30px] font-[500] text-center">
               <Link href="/login">Already have an account ? Log In</Link>
             </div>
           </div>

@@ -15,9 +15,10 @@ const Page = () => {
   }, [authCheck]);
 
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <div>
-        <div className='grid grid-cols-3 gap-12 ' >
+        <h1 className="mt-6 mb-12 text-[24px] font-bold text-center">Recommended Mentors</h1>
+        <div className='grid grid-cols-3 gap-12' >
           {/* Render mentors */}
           {mentors.length > 0 ? (
             mentors.map((mentor) => (
@@ -30,15 +31,12 @@ const Page = () => {
                     {mentor.name}
                   </h1>
                   <h1 className='mb-3' >
-                    {mentor.career}
-                  </h1>
-                  <h1 className='mb-3' >
                     {mentor.job_title}
                   </h1>
                 </div>
-                <div>
+              <div>
                   
-                </div>
+              </div>
               </div>
             ))
           ) : (

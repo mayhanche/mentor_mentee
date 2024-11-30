@@ -164,13 +164,62 @@ export const matching = async (req, res) => {
         for (let post of posts) {
             const relatedTags = recommender.getSimilarDocuments(post.id);
             mentorsFilteredBySpecification.push(...relatedTags);
-        }    
+        }
 
         const matchedMentorsBySpecifications = mentorsFilteredByFieldAndCareer.filter(mentor => 
             mentorsFilteredBySpecification.some(idObj => idObj.id === mentor.id)
         );
 
         // Train by skills
+        const mentorFilteredBySpecification = [];
+        matchedMentorsBySpecifications.map((mentor)=> {
+            mentorFilteredBySpecification.push({
+                id: mentor._id.toString(),
+                content: mentor.skills.join(" "),
+            })
+        })
+        console.log("mentorFilteredBySpecification", mentorFilteredBySpecification)
+
+        const userSkills = [
+            {
+              id: user._id.toString(),
+              content: user.skills.join(" "),
+            }
+        ];
+
+        recommender.trainBidirectional(userSkills, mentorFilteredBySpecification);
+
+        let MatchedByUserSkills = []
+        for (let userSkill of userSkills) {
+            console.log("Testing no mentor", userSkill)
+            const relatedTags = recommender.getSimilarDocuments(userSkill.id);
+            MatchedByUserSkills.push(...relatedTags);
+        }
+        console.log("MatchedByUserSkills", MatchedByUserSkills)
+        
+        const matchedMentorsByScores = mentorsFilteredBySpecification.map((mentor) => {
+            const skillMatch = MatchedByUserSkills.find(idObj => idObj.id === mentor.id);
+            return {
+                ...mentor,
+                matchScore: mentor.score + (skillMatch ? skillMatch.score : 0)
+            };
+        });
+    
+        const sortedMatchedMentors = matchedMentorsByScores
+        .sort((a, b) => b.matchScore - a.matchScore)
+        .slice(0,6)
+
+        const topMentors = await Mentor.find({ _id: { $in: sortedMatchedMentors.map((mentor) => mentor.id) } });
+
+        const sortedTopMentors = sortedMatchedMentors.map((mentor) => {
+            const fullMentor = topMentors.find((m) => m._id.toString() === mentor.id);
+            return {
+                ...fullMentor.toObject(),
+                // matchScore: mentor.matchScore,
+            };
+        });
+        console.log("sortedTopMentors", sortedTopMentors)
+
         const matchedMentors = matchedMentorsBySpecifications.filter((mentor)=> 
             skills.some(userSkill => 
                 mentor.skills.some(mentorSkill => 
@@ -178,15 +227,10 @@ export const matching = async (req, res) => {
                 )
             )
         )
-       
-        // Sort by name in ascending order
-        // const sortedMentors = matchedMentors.sort((a, b) => a.name.localeCompare(b.name));
-
-        console.log(sortedMentors); 
 
         await User.findByIdAndUpdate(req.user._id,{
             $push: {
-                matchedWith : { $each: matchedMentors },
+                matchedWith : { $each: sortedTopMentors},
             }
         });
 

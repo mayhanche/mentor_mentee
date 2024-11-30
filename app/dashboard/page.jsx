@@ -5,18 +5,16 @@ import { useAuthStore } from '@/store/auth'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
-
-
 const page = () => {
   const { user } = useAuthStore()
   const router = useRouter()
 
-  useEffect(()=>{
-    if(!user){
-      router.push('/initial')
-      return
-    }
-  },[user])
+  // useEffect(()=>{
+  //   if(!user){
+  //     router.push('/initial')
+  //     return
+  //   }
+  // },[user])
   
   if (user) {
     return (
